@@ -1,0 +1,33 @@
+import streamlit as st
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+# Streamlit App
+st.set_page_config(page_title="Word Cloud Generator", layout="wide")
+st.title("☁️ Word Cloud Generator")
+
+# Text input
+st.subheader("Enter text")
+text_input = st.text_area("Paste your text here", height=200)
+
+# File uploader
+st.subheader("Or upload a text file")
+uploaded_file = st.file_uploader("Upload a .txt file", type=["txt"])
+
+text = ""
+if uploaded_file is not None:
+    text = uploaded_file.read().decode("utf-8")
+elif text_input.strip() != "":
+    text = text_input
+
+# Generate word cloud
+if text:
+    st.subheader("Generated Word Cloud")
+    wordcloud = WordCloud(width=800, height=400, background_color="white").generate(text)
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.imshow(wordcloud, interpolation="bilinear")
+    ax.axis("off")
+    st.pyplot(fig)
+else:
+    st.info("Please enter text or upload a file to generate a word cloud.")
