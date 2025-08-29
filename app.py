@@ -3,8 +3,17 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 # Streamlit App
-st.set_page_config(page_title="Word Cloud Generator", layout="wide")
-st.title("☁️ Word Cloud Generator")
+st.set_page_config(page_title="page analysis tool", layout="wide")
+st.title("☁️ page analysis tool")
+
+# How it works section
+st.markdown("""
+### ℹ️ How it works
+1. Enter or paste your text into the text area **OR** upload a `.txt` file.
+2. The app will process the text and generate a **Word Cloud**.
+3. Words appearing more frequently in your text will appear larger in the cloud.
+4. You can use this to visualize themes, keywords, or dominant topics in your data.
+""")
 
 # Text input
 st.subheader("Enter text")
@@ -31,3 +40,9 @@ if text:
     st.pyplot(fig)
 else:
     st.info("Please enter text or upload a file to generate a word cloud.")
+
+# Footer
+st.markdown("""
+---
+👨‍💻 Made by **Vikash Goyal**
+""")
