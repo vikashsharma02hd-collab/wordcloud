@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # Streamlit App
 st.set_page_config(page_title="page analysis tool", layout="wide")
-st.title("☁️ page analysis tool")
+st.title("☁️ page analysis tool- Vikash Goyal")
 
 # How it works section
 st.markdown("""
@@ -46,3 +46,4 @@ st.markdown("""
 ---
 👨‍💻 Made by **Vikash Goyal**
 """)
+
