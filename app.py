@@ -3,11 +3,16 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from collections import Counter
 import pandas as pd
+import nltk
 from nltk.corpus import stopwords
 from nltk.sentiment import SentimentIntensityAnalyzer
 import numpy as np
 from PIL import Image
 import io
+
+# Download required NLTK data automatically
+nltk.download("stopwords")
+nltk.download("vader_lexicon")
 
 # Streamlit App
 st.set_page_config(page_title="Word Cloud Generator", layout="wide")
