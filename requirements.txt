@@ -1,3 +1,7 @@
 streamlit
 wordcloud
 matplotlib
+pandas
+nltk
+numpy
+pillow
